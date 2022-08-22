@@ -1,0 +1,10 @@
+public class Div
+{
+public static void main(String[] args)
+{
+int a=27;
+int b=3;
+int c;
+System.out.println(+c);
+}
+}
