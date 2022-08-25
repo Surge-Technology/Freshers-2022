@@ -1,10 +1,9 @@
-public class Addition1
+public class Subtraction
 {
 	public static void main(String args[])
 	{
-		int x=3;
-		x+=5;
+		int x=9;
+		x-=2;
 			System.out.println(x);
 	}
-	
 }
