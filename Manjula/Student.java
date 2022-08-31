@@ -1,50 +1,11 @@
-public class Student
+class Student
 {
-	private String name;
-	private int age;
-	private long mobilenum;
-	private String address;
-	private int pincode;
-	
-	public String getName()
+	static int a=10;
+	String b= "priya";
+	public static void main(String[] args)
 	{
-		return name;
+		Student s=new Student();
+		System.out.println(s.b);
+		System.out.println(Student.a);
 	}
-	public void setName(String name)
-	{
-		this.name=name;
-	}
-	public int getAge()
-	{
-		return age;
-	}
-	public void setAge(int age)
-	{
-		this.age=age;
-	}
-	public long getMobilenum()
-	{
-		return mobilenum;
-	}
-	public void setMobilenum(long mobilenum)
-	{
-		this.mobilenum=mobilenum;
-	}
-	public String getAddress()
-	{
-		return address;
-	}
-	public void setAddress(String Address)
-	{
-		this.address=address;
-	}
-	public int getPincode()
-	{
-		return pincode;
-	}
-	public void setPincode(int getPincode)
-	{
-		this.pincode=pincode;
-	}
-}	
-	
+}
