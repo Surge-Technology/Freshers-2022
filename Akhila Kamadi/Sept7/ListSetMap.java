@@ -39,18 +39,18 @@ public class ListSetMap {
 		System.out.println("=================HashMap=============\n");
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		map.put(1, "Kamadi");
-	    map.put(2, "Akhila");
-	    map.put(3, "Akhila");
-	    map.put(4, "Alekhya");
-	    map.put(null, "AK");
-	    map.put(null, null);
-	    map.put(3, null);
-	    map.put(5, null);
-	    System.out.println(map);
+	    	map.put(2, "Akhila");
+	   	 map.put(3, "Akhila");
+	    	map.put(4, "Alekhya");
+	    	map.put(null, "AK");
+	    	map.put(null, null);
+	    	map.put(3, null);
+	    	map.put(5, null);
+	    	System.out.println(map);
 	    
-	    for(Entry<Integer, String> entry : map.entrySet()) {
-	    	System.out.println(entry.getKey() +" = "+entry.getValue());
-	    }
+	    	for(Entry<Integer, String> entry : map.entrySet()) {
+	    		System.out.println(entry.getKey() +" = "+entry.getValue());
+	    	}
 	}
 
 }
