@@ -6,17 +6,17 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import Sep09.EmployeeDetails;
 import arraylist.Add;
 
 public class sirtask 
 {
 	public static ArrayList<Integer> getempidlst()
 	{
+		emp.setGetempid(0);
 		ArrayList<Integer> id = new ArrayList<Integer>();
-		id.add(1);
-		id.add(2);
-		id.add(3);
-		return id;
+	
+		return id; 
 	}
 
 	public static ArrayList<String> getempnamelist()
@@ -35,7 +35,7 @@ public class sirtask
 		{
 
 			map1.put(list.get(i), List1.get(i));
-			System.out.println("36" + map1);
+			//System.out.println("36" + map1);
 		}
 		return map1;
 	}
