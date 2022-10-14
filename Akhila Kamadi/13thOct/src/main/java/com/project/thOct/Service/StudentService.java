@@ -21,7 +21,7 @@ public class StudentService {
 		studentRepository.insertStudent(id, fullName, rollNo, email, password, DOB);
 	}
 
-	//Using student object
+	//method 1: Using student object
 	public boolean studentLogin(String email, String password) {
 		if(studentRepository.existsByEmailAndPassword(email,password)) {
 			return true;
@@ -29,15 +29,15 @@ public class StudentService {
 		return false;
 	}
 	
-	//using path variables check email and password
+	//method 2: using path variables check email and password
 	public Optional<Student> checkStudentLogin(String email,String password) {
 		 return studentRepository.findByEmailAndPassword(email, password);
 	}
-	//using query check email and password
+	
+	//method 3 : using query check email and password
 	public Optional<Student> getStudentByEmailAndPassword(String email,String password) {
 		 return studentRepository.getStudentByEmailAndPassword(email, password);
 	}
-	
 	
 	//save new record
 	public void saveRecord(Student student) {

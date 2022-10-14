@@ -25,7 +25,7 @@ public class StudentController {
 				student.getEmail(),student.getPassword(),student.getDOB());
 	}
 	
-	//Using student object,check email and password
+	//method1 : Using student object,check email and password
 	@GetMapping("/checkLogin")
 	public boolean studentLogin(@RequestBody Student student) {
 		if(studentService.studentLogin(student.getEmail(), student.getPassword())) {
@@ -34,7 +34,7 @@ public class StudentController {
 		return false;
 	}
 	
-	//using path variables, check email and password
+	//method 2: using path variables, check email and password
 	@GetMapping("/checkLogin/{email}/{password}")
 	public boolean checkStudentLogin(@PathVariable String email, @PathVariable String password) {
 		Optional<Student> optStudent = studentService.checkStudentLogin(email, password);
@@ -44,7 +44,7 @@ public class StudentController {
 		return false;
 	}
 	
-	//Using path variables and query,check email and password
+	//method 3: Using path variables and query,check email and password
 	@GetMapping("/getStudentByEmailAndPassword/{email}/{password}")
 	public boolean checkStudentLoginDetails(@PathVariable String email, @PathVariable String password) {
 		Optional<Student> optStudent = studentService.getStudentByEmailAndPassword(email, password);
