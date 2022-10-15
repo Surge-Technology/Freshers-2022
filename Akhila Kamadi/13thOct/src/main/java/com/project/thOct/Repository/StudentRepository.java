@@ -33,4 +33,7 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 	@Query("SELECT s FROM Student s WHERE s.email = ?1 and s.password = ?2")
 	Optional<Student> getStudentByEmailAndPassword(String email,String password);
 	
+	
+//	List<Student> findByEmail(String email);
+	
 }

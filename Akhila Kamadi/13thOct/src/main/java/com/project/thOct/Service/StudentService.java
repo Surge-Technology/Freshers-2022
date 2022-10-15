@@ -30,17 +30,30 @@ public class StudentService {
 	}
 	
 	//method 2: using path variables check email and password
-	public Optional<Student> checkStudentLogin(String email,String password) {
-		 return studentRepository.findByEmailAndPassword(email, password);
+	public boolean checkStudentLogin(String email,String password) {
+		Optional<Student> optStudent = studentRepository.findByEmailAndPassword(email, password);
+		if(optStudent.isPresent()) {
+			return true;
+		}
+		return false;
 	}
 	
 	//method 3 : using query check email and password
-	public Optional<Student> getStudentByEmailAndPassword(String email,String password) {
-		 return studentRepository.getStudentByEmailAndPassword(email, password);
+	public boolean getStudentByEmailAndPassword(String email,String password) {
+		Optional<Student> optStudent = studentRepository.getStudentByEmailAndPassword(email, password);
+		if(optStudent.isPresent()) {
+			return true;
+		}
+		return false;
 	}
+	
 	
 	//save new record
 	public void saveRecord(Student student) {
 		studentRepository.save(student);
 	}
+	
 }
+
+
+

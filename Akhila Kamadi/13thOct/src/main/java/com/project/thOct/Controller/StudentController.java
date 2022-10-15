@@ -1,7 +1,5 @@
 package com.project.thOct.Controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,30 +26,19 @@ public class StudentController {
 	//method1 : Using student object,check email and password
 	@GetMapping("/checkLogin")
 	public boolean studentLogin(@RequestBody Student student) {
-		if(studentService.studentLogin(student.getEmail(), student.getPassword())) {
-			return true;
-		}
-		return false;
+		return studentService.studentLogin(student.getEmail(), student.getPassword());
 	}
 	
 	//method 2: using path variables, check email and password
 	@GetMapping("/checkLogin/{email}/{password}")
 	public boolean checkStudentLogin(@PathVariable String email, @PathVariable String password) {
-		Optional<Student> optStudent = studentService.checkStudentLogin(email, password);
-		if(optStudent.isPresent()) {
-			return true;
-		}
-		return false;
+		return studentService.checkStudentLogin(email, password);
 	}
 	
 	//method 3: Using path variables and query,check email and password
 	@GetMapping("/getStudentByEmailAndPassword/{email}/{password}")
 	public boolean checkStudentLoginDetails(@PathVariable String email, @PathVariable String password) {
-		Optional<Student> optStudent = studentService.getStudentByEmailAndPassword(email, password);
-		if(optStudent.isPresent()) {
-			return true;
-		}
-		return false;
+		return studentService.getStudentByEmailAndPassword(email, password);
 	}
 	
 	//Adding new record to DB
@@ -60,3 +47,17 @@ public class StudentController {
 		studentService.saveRecord(student);
 	}
 }
+
+
+
+/*
+ * @GetMapping("/studentlogin/{email}/{password}")
+public boolean studentlogin(@PathVariable String email,@PathVariable String password) {
+    if(email.equals("pratiksha@surge") && password.equals("patil123")) {
+        return true;
+    }
+    else {
+        return false;
+    }  
+}
+*/
