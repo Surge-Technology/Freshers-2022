@@ -1,5 +1,6 @@
 package com.assesment.employeevalidation.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+	public List<Employee> getAllEmployees(){
+		return employeeRepository.findAll();
+	}
 	public String saveEmployee(Employee employee) {
 		Optional<Employee> optional = employeeRepository.findByFirstNameAndLastName(employee.getFirstName(), employee.getLastName());
 		if(!optional.isPresent()) {
